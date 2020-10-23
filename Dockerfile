@@ -1,5 +1,7 @@
 FROM golang:1.15-alpine AS builder
 
+RUN apk update && apk add --no-cache git
+
 RUN go get -u github.com/digitalocean/doctl/cmd/doctl
 RUN go get -u github.com/kubernetes/kubernetes/cmd/kubectl
 
